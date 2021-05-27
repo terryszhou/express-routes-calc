@@ -75,12 +75,14 @@ app.listen(PORT, () => {
 
 ## Bonus
 
-Make it so your calculator can accept any amount of numbers to do math with instead of just 2 hardcoded ones with the wildcard `*` route variable.
+Make it so your calculator can accept any amount of numbers to do math with instead of just 2 hardcoded ones with the wildcard `*` route variable. Instead if having the the math operation as the first route parameter, send it in the query params, so one route can handle addition, subtraction, multiplication, and division. 
 
-Use this example at `/wildcard/*` to experiment with how this might work:
+For example the URL `/5/6/7/8?math=add` would respond with `26` and the URL `5/6/7/8?math=subtract` would respond with `-16`.Likewise `5/6/7/8/9/10?math=add` should respond with `45` and so on. 
+
+Use this example at `/*` to experiment with how this might work:
 
 ```javascript
-app.get("/wildcard/*", (req, res) => {
+app.get("/*", (req, res) => {
   res.send(req.params);
 });
 ```
