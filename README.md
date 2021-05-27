@@ -17,7 +17,7 @@ This is an example of a simple GET route with request parameters using express:
 app.get('/:input', (req, res) => {
   console.log("req.params: ", req.params)
   res.send("Our parameter is " + req.params.input + ".");
-});
+})
 ```
 
 ## Getting Started
@@ -63,7 +63,7 @@ const PORT = 3000
 
 // define routes
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.send('Hello, World!')
 });
 
 // listen on a port
@@ -83,8 +83,9 @@ Use this example at `/*` to experiment with how this might work:
 
 ```javascript
 app.get("/*", (req, res) => {
-  res.send(req.params);
-});
+  console.log(req.params)
+  res.send(req.params)
+})
 ```
 
 Follow along with the [gitbook notes](https://gawdiseattle.gitbook.io/wdi/05-node-express/00readme-1/02routes#2nd-express-app-fun-with-routes) on express routing for some tips and tricks.
